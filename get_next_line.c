@@ -6,7 +6,7 @@
 /*   By: pbie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 15:02:39 by pbie              #+#    #+#             */
-/*   Updated: 2016/01/27 15:06:19 by pbie             ###   ########.fr       */
+/*   Updated: 2016/01/27 17:39:27 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int				get_next_line(int const fd, char **line)
 {
+	char		buff[BUFF_SIZE];
 
+	if (fd < 0 || !line || read(fd, buff, 0) < 0)
+		return (-1);
 }

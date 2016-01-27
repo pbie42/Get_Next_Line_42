@@ -6,8 +6,12 @@
 /*   By: pbie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 15:08:22 by pbie              #+#    #+#             */
-/*   Updated: 2016/01/27 15:08:25 by pbie             ###   ########.fr       */
+/*   Updated: 2016/01/27 17:39:19 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 10
+int		get_next_line(int const fd, char **line);
+#endif
