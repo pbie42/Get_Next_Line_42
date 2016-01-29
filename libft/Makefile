@@ -6,7 +6,7 @@
 #    By: pbie <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 18:33:46 by pbie              #+#    #+#              #
-#    Updated: 2015/12/14 17:39:41 by pbie             ###   ########.fr        #
+#    Updated: 2016/01/29 15:44:11 by pbie             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRC = ft_atoi.c \
 	  ft_isupper.c \
 	  ft_swap.c \
 	  ft_wordcount.c \
+	  ft_strndup.c \
 
 
 OBJ = $(SRC:.c=.o)
@@ -90,7 +91,7 @@ $(NAME): $(OBJ)
 	@echo "$(NAME) indexed"
 
 %.o: %.c
-	@gcc $(FLAG) -c $< -o $@
+	@gcc $(FLAG) -I includes -c $< -o $@
 
 clean:
 	@rm -f $(OBJ)

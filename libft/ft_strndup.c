@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/27 15:08:22 by pbie              #+#    #+#             */
-/*   Updated: 2016/01/29 18:22:27 by pbie             ###   ########.fr       */
+/*   Created: 2016/01/29 15:34:42 by pbie              #+#    #+#             */
+/*   Updated: 2016/01/29 15:41:29 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# define BUFF_SIZE 23
+#include "libft.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include "libft/includes/libft.h"
-
-typedef struct		s_fd
+char			*ft_strndup(const char *s1, size_t n)
 {
-	int				fd;
-	char			*str;
-}					t_fd;
+	char		*str;
+	size_t		i;
 
-typedef struct		s_lst_fd
-{
-	t_fd			*data;
-	struct s_lst_fd	*next;
-}					t_lst_fd;
-
-int					get_next_line(int const fd, char **line);
-
-#endif
+	i = 0;
+	str = (char *)malloc(sizeof(char) * n + 1);
+	if (str == NULL)
+		return (NULL);
+	while (s1[i] && i < n)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
