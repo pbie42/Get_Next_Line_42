@@ -6,7 +6,7 @@
 /*   By: pbie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 15:02:39 by pbie              #+#    #+#             */
-/*   Updated: 2016/01/29 18:24:47 by pbie             ###   ########.fr       */
+/*   Updated: 2016/01/29 18:30:23 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int				get_next_line(int const fd, char **line)
 {
 	char		buf[BUFF_SIZE + 1];
 	int			ret;
+	char		*sav;
 	char		*c;
 	static char	*tmp = "";
 
@@ -55,13 +56,16 @@ int				get_next_line(int const fd, char **line)
 	{
 		ret = read(fd, buf, BUFF_SIZE);
 		buf[ret] = '\0';
+		sav = tmp;
 		if ((tmp = ft_strjoin(tmp, buf)) == NULL)
 			return (-1);
+		if (*sav)
+			free(sav);
 	}
 	if (c)
 	{
 		*line = ft_strndup(tmp, c - tmp);
-		tmp = tmp + (c - tmp + 1);
+		tmp = ft_strdup(tmp + (c - tmp + 1));
 	}
 	else
 		*line = ft_strdup(tmp);
