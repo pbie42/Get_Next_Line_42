@@ -6,7 +6,7 @@
 /*   By: pbie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 16:21:25 by pbie              #+#    #+#             */
-/*   Updated: 2016/01/29 16:43:20 by pbie             ###   ########.fr       */
+/*   Updated: 2016/02/01 17:58:20 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int			ft_cntwrd(char const *s, char c)
 	return (cntr);
 }
 
-char			*ft_strndup(const char *s, size_t n)
+char				*ft_strndup(const char *s, size_t n)
 {
 	char			*str;
 
