@@ -6,7 +6,7 @@
 #    By: pbie <marvin@42.fr>                        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 18:33:46 by pbie              #+#    #+#              #
-#    Updated: 2016/01/29 15:44:11 by pbie             ###   ########.fr        #
+#    Updated: 2016/02/02 19:40:25 by pbie             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRC = ft_atoi.c \
 	  ft_striter.c \
 	  ft_striteri.c \
 	  ft_strjoin.c \
+	  ft_strnjoin.c \
 	  ft_strlcat.c \
 	  ft_strlen.c \
 	  ft_strmap.c \
