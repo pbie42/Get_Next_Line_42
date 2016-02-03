@@ -6,7 +6,7 @@
 /*   By: jgeslin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/08 14:19:17 by jgeslin           #+#    #+#             */
-/*   Updated: 2016/02/02 20:31:54 by pbie             ###   ########.fr       */
+/*   Updated: 2016/02/03 17:29:38 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		main()
 		printf("[%d] %s\n", c, line);
 	}
 	close(fd2);
-*/	while ((i = get_next_line(fd, &line)) != 0)
+*/	while ((i = get_next_line(fd, &line)) > 0)
 	{
 //		c = c + i;
 		printf("%d\n%s\n", i, line);

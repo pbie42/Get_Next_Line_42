@@ -6,7 +6,7 @@
 /*   By: pbie <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/27 15:02:39 by pbie              #+#    #+#             */
-/*   Updated: 2016/02/02 20:06:59 by pbie             ###   ########.fr       */
+/*   Updated: 2016/02/03 16:41:40 by pbie             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static t_list	*ft_findfd(t_list **begin, int fd)
 	}
 	tmp = ft_lstnew("\0", 1);
 	tmp->content_size = fd;
-	ft_lstadd(begin, tmp);
+	ft_lstaddend(begin, tmp);
 	return (tmp);
 }
 
@@ -59,7 +59,7 @@ int				get_next_line(int const fd, char **line)
 	while (!ft_strchr(list->content, '\n') && (ret = read(fd, buf, BUFF_SIZE)))
 		list->content = ft_freejoin(list->content, buf, ret);
 	ret = 0;
-	while (((char*)list->content)[ret] && ((char *)list->content)[ret] != '\n')
+	while (((char *)list->content)[ret] && ((char *)list->content)[ret] != '\n')
 		++ret;
 	*line = ft_strndup(list->content, ret);
 	if (((char *)list->content)[ret] == '\n')
